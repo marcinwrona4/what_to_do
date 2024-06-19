@@ -1,0 +1,35 @@
+{% extends "what_to_do_app/base.html" %}
+
+{% block content %}
+<div id="to_do">
+  <form action="/" method="post">
+    {% csrf_token %}
+    {{form.text}}
+    <input type="submit" name="create-task" value="Submit">
+  </form>
+  
+  <table>
+    {% for entry in entries %}
+      <tr>
+        <td>
+        {{ entry.text }} 
+      </td>
+        <td>{% if entry.state == True %} <input type="checkbox" checked> 
+        {% else %} 
+        <input type="checkbox"> 
+        {% endif %}</td>
+        <td>
+          <a href="{% url 'what_to_do_app:task-update' entry.id %}">
+            <button id="del-btn">EDIT</button>
+          </a>
+        </td>
+        <td>
+          <a href="{% url 'what_to_do_app:task-delete' entry.id %}">
+            <button id="del-btn">DEL</button>
+          </a>
+        </td>
+      </tr>
+    {% endfor %}
+    </table>
+  </div>
+  {%endblock content %}

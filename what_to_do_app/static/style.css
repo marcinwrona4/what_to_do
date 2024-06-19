@@ -1,0 +1,31 @@
+body { 
+    background-color: lightblue; 
+}
+
+table {
+    background-color: lightgreen;
+    border-collapse: collapse;
+    border-radius: 15px;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px rgb(77, 77, 175);
+}
+
+td {
+    border: 1px solid rgb(77, 77, 175);
+    padding: 5px;
+
+}
+
+div#to_do {
+    width: 800px;
+}
+
+h1 a {
+    color: #3d7475;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+#btn-container {
+    display: flex;
+}
