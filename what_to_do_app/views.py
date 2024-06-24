@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from .models import Entry
-from .forms import *
+from .forms import EntryForm
 
 def index(request):
     entries = Entry.objects.order_by('-date_added')
@@ -10,6 +10,7 @@ def index(request):
 
     if request.method == "POST":
         form = EntryForm(request.POST)
+
         if form.is_valid():
             form.save()
         return redirect('/')
@@ -17,10 +18,11 @@ def index(request):
     context = {'entries': entries, 'form': form}
     return render(request, 'what_to_do_app/index.html', context)
 
-def task_update(request, entry_id):
-    task = Entry.objects.get(id=entry_id)
+def task_update(request, pk):
+    task = Entry.objects.get(id=pk)
     
     if request.method != 'POST':
+
         form = EntryForm(instance=task)
     else:
         form = EntryForm(instance=task, data=request.POST)
@@ -28,8 +30,8 @@ def task_update(request, entry_id):
             form.save()
             return redirect('/')
         
-    context = {"form": form}
-    return render(request, "what_to_do_app/index.html", context)
+    context = {"form": form, "task": task}
+    return render(request, "what_to_do_app/task_update.html", context)
 
 def task_delete(request, pk):
     task = Entry.objects.get(id=pk)
@@ -39,3 +41,4 @@ def task_delete(request, pk):
     
     context = {"task": task}
     return render(request, 'what_to_do_app/task_delete.html', context)
+
