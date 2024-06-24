@@ -10,5 +10,5 @@ urlpatterns = [
     # Delete task site
     path('task/<int:pk>/delete', views.task_delete, name='task-delete'),
     # Update task site
-    path('task/<int:entry_id>/task_update.html', views.task_update, name='task-update')
+    path('task/<int:pk>/update', views.task_update, name='task-update')
 ]
