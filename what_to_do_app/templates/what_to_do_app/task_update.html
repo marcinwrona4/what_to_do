@@ -4,13 +4,13 @@
 
 <div class="update-container">
     <p>Edit</p>
-    <input type="text" value="{{task.text}}">
     <div class="btn-container">
-    <a href="/">
-        <button>Cancel</button>
-    </a>
+        <a href="/">
+            <button>Cancel</button>
+        </a>
     <form action="" method='POST'>
         {% csrf_token %}
+        {{form.text}}
         <button>Edit</button>
     </form>
     </div>
