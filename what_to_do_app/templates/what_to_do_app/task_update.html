@@ -2,16 +2,17 @@
 
 {% block content %}
 
-<div class="update-container">
-    <p>Edit</p>
-    <div class="btn-container">
-        <a href="/">
-            <button>Cancel</button>
-        </a>
+<div id="update-container">
+    <p id="p-update">Update the task</p>    
     <form action="" method='POST'>
         {% csrf_token %}
         {{form.text}}
-        <button>Edit</button>
+        <br>
+        <div id="btn-container-upd">
+        <a href="{% url 'what_to_do_app:index' %}">
+            <button id="btn-cancel-update">Cancel</button>
+        </a><button id="btn-save-update">Edit</button>
+        </div>
     </form>
     </div>
 </div>
