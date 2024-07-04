@@ -16,8 +16,36 @@ td {
 
 }
 
-div#to_do {
-    width: 800px;
+#to_do {
+    width: 50%;
+    margin: auto;
+}
+
+#index-site-form {
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 2px solid green;
+    border-bottom: none;
+    padding-top: 50px;
+    margin-top: 50px;
+    background: rgb(255, 255, 84);
+}
+
+#entries {
+    display: flex;
+    justify-content: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 2px solid green;
+    border-top: none;
+    padding-bottom: 50px;
+    background: rgb(255, 255, 84);
+}
+
+h1 {
+    text-align: center;
 }
 
 h1 a {
@@ -26,6 +54,41 @@ h1 a {
     text-decoration: none;
 }
 
-#btn-container {
+#update-container, #del-container {
+border: 2px solid green;
+border-radius: 10px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+padding: 50px 120px;
+background: rgb(255, 255, 84)
+}
+
+#btn-container-upd, #btn-container-del {
     display: flex;
+    justify-content: center;
+}
+
+#p-update {
+    text-align: center;
+}
+
+#btn-container-upd {
+    margin: 15px;
+}
+
+#btn-cancel-update, #btn-save-update, #btn-cancel-delete, #btn-delete-delete, #btn-add-task {
+    padding: 5px;
+    color: white;
+    background-color: rgb(59, 59, 179);
+    border-radius: 7px;
+}
+
+#task-to-del {
+    text-align: center;
+}
+
+#edit-btn, #del-btn {
+    border-radius: 7px;
 }
