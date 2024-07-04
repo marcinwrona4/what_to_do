@@ -2,16 +2,16 @@
 
 {% block content %}
 
-<div class="del-container">
+<div id="del-container">
     <p>Are you sure you want to delete</p>
-    <h3>{{task.text}}</h3>
-    <div class="btn-container">
+    <h3 id="task-to-del">{{task.text}}</h3>
+    <div id="btn-container-del">
     <a href="/">
-        <button id="btn-cancel" class="btn-cancel">Cancel</button>
+        <button id="btn-cancel-delete" class="btn-cancel">Cancel</button>
     </a>
     <form action="" method='POST'>
         {% csrf_token %}
-        <button>Delete</button>
+        <button id="btn-delete-delete">Delete</button>
     </form>
     </div>
 </div>
